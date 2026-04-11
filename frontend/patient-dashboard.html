@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Dashboard</title>
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<a href="patients.html" class="home-btn">← Back</a>
+
+<h1 class="dashboard-title">Health Monitoring Dashboard</h1>
+
+<!-- PATIENT INFO -->
+<div class="card patient-info">
+  <h2 id="patientName"></h2>
+<div class="patient-details">
+  <span id="patientRoom"></span>
+  <span id="patientAge"></span>
+  <span id="patientGender"></span>
+</div>
+</div>
+
+<!-- CURRENT VITALS -->
+ <div class="vitals-container">
+  <div class="vital-card">
+    <h3>Blood Pressure</h3>
+    <p id="bpDisplay">--</p>
+  </div>
+
+  <div class="vital-card">
+    <h3>Sugar</h3>
+    <p id="sugarDisplay">--</p>
+  </div>
+
+  <div class="vital-card">
+    <h3>Heart Rate</h3>
+    <p id="hrDisplay">--</p>
+  </div>
+
+  <div class="vital-card">
+    <h3>Temperature</h3>
+    <p id="tempDisplay">--</p>
+  </div>
+
+  <div class="vital-card">
+    <h3>Oxygen</h3>
+    <p id="oxygenDisplay">--</p>
+  </div>
+</div>
+
+<div class="action-buttons">
+  <button id="historyBtn">Medical History</button>
+  <button id="medicationBtn">Medication</button>
+</div>
+
+<div id="historySection" class="hidden">
+  <p>History will show here</p>
+</div>
+
+<div id="medicationSection" class="hidden">
+  <p>Medication will show here</p>
+</div>
+
+<!-- ADD RECORD -->
+<div class="card">
+  <h2>Add Health Record</h2>
+
+  <form id="healthForm">
+    <input type="date" id="date" required>
+    <input type="text" id="bpInput" placeholder="Blood Pressure">
+    <input type="text" id="sugar" placeholder="Sugar">
+    <input type="text" id="hrInput" placeholder="Heart Rate">
+    <input type="text" id="tempInput" placeholder="Temperature">
+    <input type="text" id="oxygenInput" placeholder="Oxygen">
+
+    <button class="btn-primary">Add Reading</button>
+  </form>
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

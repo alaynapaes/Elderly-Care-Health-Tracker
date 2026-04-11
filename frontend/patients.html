@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patients - Cura Companion</title>
+
+  <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+<!-- HOME BUTTON -->
+<a href="home.html" class="home-btn">← Home</a>
+
+<div class="patient-container">
+
+  <!-- ADD PATIENT CARD -->
+  <div class="patient-card">
+    <h2>Add Patient</h2>
+
+    <select id="selectedPatient"></select>
+
+    <form id="patientForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="number" id="age" min="0" placeholder="Age" required>
+      <select id="gender" required>
+        <option value=""> Gender</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+      <input type="text" id="room" placeholder="Room Number">
+      <input type="text" id="contact" placeholder="Emergency Contact">
+
+      <button class="btn-primary" type="submit">Add Patient</button>
+    </form>
+  </div>
+
+  <!-- PATIENT LIST CARD -->
+  <div class="patient-card">
+    <h2>Patient List</h2>
+    <ul id="patientList"></ul>
+  </div>
+
+</div>
+
+<!-- ADD MEDICAL HISTORY -->
+<div class="sub-section">
+  <h3>Add Medical History</h3>
+
+  <form id="historyForm">
+    <input type="text" id="disease" placeholder="Disease (e.g., Diabetes)" required>
+    <input type="text" id="notes" placeholder="Notes">
+
+    <button type="submit">Add History</button>
+  </form>
+</div>
+
+<!-- ADD MEDICATION -->
+<div class="sub-section">
+  <h3>Add Medication</h3>
+
+  <form id="medicationForm">
+    <input type="text" id="medicine" placeholder="Medicine Name" required>
+    <input type="text" id="dosage" placeholder="Dosage">
+    <input type="text" id="timing" placeholder="Timing (Morning/Evening)" required>
+
+    <button type="submit">Add Medication</button>
+  </form>
+</div>
+
+<script src="patients.js"></script>
+</body>
+</html>

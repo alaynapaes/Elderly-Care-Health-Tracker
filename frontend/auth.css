@@ -1,0 +1,202 @@
+:root {
+  --primary-color: rgb(22, 197, 203);
+  --text-color: rgba(0, 0, 0, 1);
+  --secondary-text: rgba(89, 89, 89, 1);
+  --bg-color: #fff;
+  --light-color: rgb(195, 253, 255);
+  --font-family: "Figtree", sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--primary-color), var(--light-color));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* AUTH CARD */
+.auth-container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* TITLE */
+.auth-container h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* INPUT FIELDS */
+.auth-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* INPUT FOCUS EFFECT */
+.auth-container input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(22, 197, 203, 0.3);
+}
+
+/* BUTTON */
+.auth-container button {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color:rgb(22, 197, 203);
+  color: white;
+  border-color: #fff;
+  font-size: 15px;
+}
+
+/* BUTTON HOVER */
+.auth-container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(22, 197, 203, 0.3);
+}
+
+/* LINK TEXT */
+.auth-container p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.auth-container a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 30px 20px;
+  }
+
+  .auth-container h2 {
+    font-size: 22px;
+  }
+}
+
+/* HOME BUTTON */
+.home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary-color);
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.home-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(22, 197, 203, 0.3);
+}
+
+/* PATIENT PAGE LAYOUT */
+.patient-container {
+  display: flex;
+  gap: 30px;
+  padding: 100px 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* CARD STYLE */
+.patient-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* HEADINGS */
+.patient-card h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* INPUTS */
+.patient-card input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: 0.3s ease;
+}
+
+.patient-card input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(22, 197, 203, 0.3);
+}
+
+/* BUTTON */
+.patient-card button {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color:rgb(22, 197, 203);
+  color: white;
+  border-color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+/* PATIENT LIST */
+#patientList {
+  list-style: none;
+  padding: 0;
+}
+
+#patientList li {
+  background: var(--light-color);
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .patient-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
