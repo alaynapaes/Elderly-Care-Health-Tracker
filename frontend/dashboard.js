@@ -1,5 +1,6 @@
 const params = new URLSearchParams(window.location.search);
 
+
 const patient_id = params.get('patient_id');
 // FETCH FULL PATIENT DETAILS
 fetch(`http://localhost:3000/patient/${patient_id}`)
@@ -102,3 +103,79 @@ document.getElementById('medicationBtn').addEventListener('click', () => {
       });
     });
 });
+
+const daysSelect = document.getElementById('daysSelect');
+const metricSelect = document.getElementById('metricSelect');
+
+let chart;
+
+function loadGraph() {
+  const days = daysSelect.value;
+  const metric = metricSelect.value;
+
+  fetch(`http://localhost:3000/health-history/${patient_id}?days=${days}`)
+    .then(res => res.json())
+    .then(data => {
+
+      console.log("GRAPH DATA:", data);
+
+      const filteredData = data.filter(d => d[metric] !== null && d[metric] !== 0);
+
+      const labels = filteredData.map(d => {
+        const date = new Date(d.date);
+        return date.toLocaleDateString();
+      });
+
+      const values = filteredData.map(d => d[metric]);
+
+
+      if (chart) chart.destroy();
+
+      const ctx = document.getElementById('healthChart').getContext('2d');
+
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: metric.toUpperCase(),
+            data: values,
+            borderColor: "#16c5cb",
+            backgroundColor: "#16c5cb",
+            borderWidth: 2,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "black"
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "black"
+              }
+            },
+            y: {
+              ticks: {
+                color: "black"
+              }
+            }
+          }
+        }
+      });
+
+    })
+    .catch(err => console.error(err));
+}
+
+
+daysSelect.addEventListener('change', loadGraph);
+metricSelect.addEventListener('change', loadGraph);
+
+loadGraph();

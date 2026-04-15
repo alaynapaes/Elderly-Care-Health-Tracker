@@ -1,0 +1,104 @@
+:root {
+  --primary-color: rgb(22, 197, 203);
+  --light-color: rgb(195, 253, 255);
+  --text-color: #333;
+  --bg-color: #fff;
+  --font-family: "Figtree", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, var(--primary-color), var(--light-color));
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* TITLE */
+.page-title {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 32px;
+  color: white;
+}
+
+/* HOME BUTTON */
+.home-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--primary-color);
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.home-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* CONTAINER */
+.care-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* CARD */
+.care-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* HEADINGS */
+.care-card h2 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+/* HELPLINES */
+.helpline {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.helpline span {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+
+/* LIST */
+.care-card ul {
+  padding-left: 18px;
+}
+
+.care-card li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* WARNING NOTE */
+.warning-note {
+  margin-top: 15px;
+  font-weight: bold;
+  color: red;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .care-container {
+    grid-template-columns: 1fr;
+  }
+}

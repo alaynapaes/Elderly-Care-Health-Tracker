@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <title>Patient Dashboard</title>
 
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="auth.css">
 </head>
 
 <body>
 
 <a href="patients.html" class="home-btn">← Back</a>
+<a href="home.html" class="home-btn logout">Logout</a>
 
 <h1 class="dashboard-title">Health Monitoring Dashboard</h1>
 
@@ -52,8 +53,8 @@
 </div>
 
 <div class="action-buttons">
-  <button id="historyBtn">Medical History</button>
-  <button id="medicationBtn">Medication</button>
+  <button id="historyBtn" class="home-btn action">Medical History</button>
+  <button id="medicationBtn" class="home-btn action">Medication</button>
 </div>
 
 <div id="historySection" class="hidden">
@@ -65,7 +66,9 @@
 </div>
 
 <!-- ADD RECORD -->
-<div class="card">
+<div class="record-graph-container">
+
+  <div class="card record-card">
   <h2>Add Health Record</h2>
 
   <form id="healthForm">
@@ -80,6 +83,30 @@
   </form>
 </div>
 
+<div class="card graph-card">
+    <h2>Health Trends</h2>
+
+    <div class="graph-controls">
+      <select id="daysSelect">
+        <option value="7">Last 7 Days</option>
+        <option value="15">Last 15 Days</option>
+        <option value="30">Last 30 Days</option>
+      </select>
+
+      <select id="metricSelect">
+        <option value="blood_pressure">Blood Pressure</option>
+        <option value="sugar_level">Sugar</option>
+        <option value="heart_rate">Heart Rate</option>
+        <option value="temperature">Temperature</option>
+        <option value="oxygen_level">Oxygen</option>
+      </select>
+    </div>
+
+    <canvas id="healthChart"></canvas>
+  </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="dashboard.js"></script>
 
 </body>

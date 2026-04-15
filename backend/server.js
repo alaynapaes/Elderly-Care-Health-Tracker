@@ -197,6 +197,24 @@ app.post('/medication', (req, res) => {
   });
 });
 
+app.get('/health-history/:patient_id', (req, res) => {
+  const { patient_id } = req.params;
+  const { days } = req.query;
+
+  db.query(
+    `SELECT date, blood_pressure, sugar_level, heart_rate, temperature, oxygen_level
+     FROM Daily_Health_Record
+     WHERE patient_id = ?
+     ORDER BY date DESC
+     LIMIT ?`,
+    [patient_id, parseInt(days)],
+    (err, results) => {
+      if (err) return res.status(500).send(err);
+      res.json(results.reverse());
+    }
+  );
+});
+
 
 /* add more APIs here later */
 
