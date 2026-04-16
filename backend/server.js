@@ -216,7 +216,7 @@ app.get('/health-history/:patient_id', (req, res) => {
 });
 
 
-/* add more APIs here later */
+/* add more APIs */
 
 app.listen(3000, () => {
   console.log('Server running on port 3000');
